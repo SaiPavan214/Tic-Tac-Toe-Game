@@ -1,16 +1,36 @@
 .field {
-    cursor: pointer;
-    border: 6px solid var(--border);
-    border-radius: 2px;
-    font-family: Helvetica;
-    font-weight: bold;
-    font-size: 4em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.2s;
+  cursor: pointer;
+  border: 6px solid var(--border);
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s;
+  user-select: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
 .field:hover {
-    background-color: var(--hover);
+  transform: scale(1.1);
+  background-color: var(--hover);
+}
+
+.field span {
+  pointer-events: none;
+}
+
+/* glowing effect for X */
+.field span.X {
+  color: #00bfff; /* skyblue */
+  text-shadow: 0 0 10px #00bfff;
+}
+
+/* glowing effect for O */
+.field span.O {
+  color: #ff7f50; /* coral/orange */
+  text-shadow: 0 0 10px #ff7f50;
 }

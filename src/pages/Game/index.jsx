@@ -9,9 +9,9 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      turn: props.player1Mark || 'X',  // <-- initialize from prop
+      turn: props.player1Mark || 'X',
       cells: Array(9).fill(null),
-      winner: null
+      winner: null,
     };
   }
 
@@ -24,7 +24,7 @@ class Game extends Component {
       [1, 4, 7],
       [2, 5, 8],
       [0, 4, 8],
-      [2, 4, 6]
+      [2, 4, 6],
     ];
 
     for (let combo of combos) {
@@ -47,27 +47,26 @@ class Game extends Component {
     this.setState({
       cells: newCells,
       turn: turn === 'X' ? 'O' : 'X',
-      winner: newWinner
+      winner: newWinner,
     });
 
     if (newWinner) {
       Swal.fire({
         title: `${newWinner} Wins!`,
         icon: 'success',
-        confirmButtonText: 'OK'
+        confirmButtonText: 'OK',
       });
     }
   };
 
   resetGame = () => {
     this.setState({
-      turn: this.props.player1Mark || 'X',  // <-- reset to starting mark
+      turn: this.props.player1Mark || 'X',
       cells: Array(9).fill(null),
-      winner: null
+      winner: null,
     });
   };
 
-  // Optional: update turn if player1Mark prop changes after mount
   componentDidUpdate(prevProps) {
     if (prevProps.player1Mark !== this.props.player1Mark) {
       this.setState({ turn: this.props.player1Mark });
@@ -80,7 +79,8 @@ class Game extends Component {
         <Board>
           {this.state.cells.map((cell, index) => (
             <Field key={index} click={() => this.handleClick(index)}>
-              {cell}
+              {/* Add className to apply glowing styles */}
+              <span className={cell ? cell : ''}>{cell}</span>
             </Field>
           ))}
         </Board>
