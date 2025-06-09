@@ -56,6 +56,13 @@ class Game extends Component {
         icon: 'success',
         confirmButtonText: 'OK',
       });
+    } else if (newCells.every(cell => cell !== null)) {
+      Swal.fire({
+        title: "It's a Draw!",
+        icon: 'info',
+        confirmButtonText: 'OK',
+      });
+      this.setState({ winner: 'draw' }); // Optional: mark game as finished to prevent further clicks
     }
   };
 
