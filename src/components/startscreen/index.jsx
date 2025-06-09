@@ -1,32 +1,44 @@
 import React, { useState } from 'react';
 import './styles.css';
 
-export default function StartScreen({ onStart }) {
-  const [playerMark, setPlayerMark] = useState('X');
+function StartScreen({ onStart }) {
+  const [selectedMark, setSelectedMark] = useState('X');
 
   return (
-    <div className="start-screen">
-      <h1>PICK PLAYER 1&apos;S MARK</h1>
-      <p>Remember: X goes first</p>
+    <div className="container">
+      <h1 className="title">Pick Player 1'st Mark</h1>
 
-      <div className="mark-options">
+      <div className="buttons">
         <button
-          className={playerMark === 'X' ? 'selected' : ''}
-          onClick={() => setPlayerMark('X')}
+          className={`button ${selectedMark === 'X' ? 'selectedX' : ''}`}
+          onClick={() => setSelectedMark('X')}
+          style={{ backgroundColor: '#00bfff' }} // skyblue
         >
           X
         </button>
         <button
-          className={playerMark === 'O' ? 'selected' : ''}
-          onClick={() => setPlayerMark('O')}
+          className={`button ${selectedMark === 'O' ? 'selectedO' : ''}`}
+          onClick={() => setSelectedMark('O')}
+          style={{ backgroundColor: '#ff7f50' }} // orange
         >
           O
         </button>
       </div>
 
-      <button className="start-button" onClick={() => onStart(playerMark)}>
+      <h2 className="subtitle">Remember: {selectedMark} goes first</h2>
+
+      <button
+        className="startButton"
+        onClick={() => onStart(selectedMark)}
+        style={{
+          backgroundColor: selectedMark === 'X' ? '#ff7f50' : '#00bfff',
+          color: 'white',
+        }}
+      >
         New Game (vs player)
       </button>
     </div>
   );
 }
+
+export default StartScreen;
