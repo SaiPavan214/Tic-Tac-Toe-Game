@@ -1,0 +1,15 @@
+.settings {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.settings h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.settings button {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  cursor: pointer;
+}
