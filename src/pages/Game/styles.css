@@ -1,4 +1,21 @@
 .game-container {
-  text-align: center;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* full viewport height to center vertically */
+  margin-top: 0; /* remove previous margin-top */
+  text-align: center; /* keep text centered */
+  padding: 10px; /* some padding so it doesn't touch screen edges */
+  box-sizing: border-box;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .board {
+    width: 90vw;
+    height: 90vw; /* keep square */
+    max-width: 400px;
+    max-height: 400px;
+  }
 }
