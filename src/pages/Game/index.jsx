@@ -9,7 +9,7 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      turn: 'X',
+      turn: props.player1Mark || 'X',  // <-- initialize from prop
       cells: Array(9).fill(null),
       winner: null
     };
@@ -61,11 +61,18 @@ class Game extends Component {
 
   resetGame = () => {
     this.setState({
-      turn: 'X',
+      turn: this.props.player1Mark || 'X',  // <-- reset to starting mark
       cells: Array(9).fill(null),
       winner: null
     });
   };
+
+  // Optional: update turn if player1Mark prop changes after mount
+  componentDidUpdate(prevProps) {
+    if (prevProps.player1Mark !== this.props.player1Mark) {
+      this.setState({ turn: this.props.player1Mark });
+    }
+  }
 
   render() {
     return (
