@@ -1,28 +1,35 @@
-import { themes_data } from '../assets/themes/themes_data';
+import { themes_data } from './themes_data';
 
-export const themes = {
-    themes_data,
+const themes = {
+  themes_data,
 
-    getStyle(element, property) {
-        return window.getComputedStyle(element).getPropertyValue("--" + property);
-    },
+  setTheme(theme) {
+    let themeLink = document.getElementById('theme-style');
 
-    loadThemes() {
-        const lcStTm = localStorage.getItem("theme");
-        const newTheme = lcStTm ? JSON.parse(lcStTm) : this.themes_data.dark;
-        this.setTheme(newTheme);
-    },
-
-    setTheme(theme) {
-        const html = document.querySelector("html");
-        html.style.setProperty("--bgc", theme.bgc);
-        html.style.setProperty("--hover", theme.hover);
-        html.style.setProperty("--border", theme.border);
-        html.style.setProperty("--text-color", theme.textColor);
-        this.save(theme);
-    },
-
-    save(theme) {
-        localStorage.setItem("theme", JSON.stringify(theme));
+    if (!themeLink) {
+      themeLink = document.createElement('link');
+      themeLink.rel = 'stylesheet';
+      themeLink.id = 'theme-style';
+      document.head.appendChild(themeLink);
     }
+
+    themeLink.href = theme.cssFile;
+    localStorage.setItem('selected_theme', theme.cssFile);
+  },
+
+  loadThemes() {
+    const storedTheme = localStorage.getItem('selected_theme');
+    if (storedTheme) {
+      let themeLink = document.getElementById('theme-style');
+      if (!themeLink) {
+        themeLink = document.createElement('link');
+        themeLink.rel = 'stylesheet';
+        themeLink.id = 'theme-style';
+        document.head.appendChild(themeLink);
+      }
+      themeLink.href = storedTheme;
+    }
+  }
 };
+
+export { themes };
