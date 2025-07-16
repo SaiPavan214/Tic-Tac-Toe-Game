@@ -1,12 +1,103 @@
-# React + Vite
+# ❌⭕ Tic-Tac-Toe Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and elegant **Tic-Tac-Toe** game built using **React**. Play as Player X or Player O in this two-player browser-based game with responsive layout and smooth game state handling.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Demo
 
-## Expanding the ESLint configuration
+👉 [**Play the Game**](https://to-do-list-saipavan214s-projects.vercel.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎮 Features
+
+- 🧠 Classic 3x3 grid Tic-Tac-Toe gameplay
+- 🧑‍🤝‍🧑 Two-player local play (X vs O)
+- 🔁 Game reset button
+- 🏆 Winner announcement
+- ❌ Draw detection
+- 🖥️ Responsive layout with a clean UI
+
+---
+
+## 🖼️ Screenshots
+
+| Game Board          | Win State              |
+| ------------------- | ---------------------- |
+| ![Board](image.png) | ![Winner](image-1.png) |
+
+---
+
+## ⚙️ Tech Stack
+
+| Technology | Description                |
+| ---------- | -------------------------- |
+| React      | JavaScript library for UI  |
+| CSS        | For styling the game board |
+| Vercel     | For deploying the app live |
+
+---
+
+## 🚀 Getting Started
+
+Clone and run this project locally:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/SaiPavan214/Tic-Tac-Toe-Game.git
+
+# 2. Navigate to the project folder
+cd Tic-Tac-Toe-Game
+
+# 3. Install dependencies
+npm install
+
+# 4. Run the development server
+npm run dev
+Make sure you have Node.js and npm installed on your machine.
+
+📁 Project Structure
+csharp
+Copy
+Edit
+Tic-Tac-Toe-Game/
+│
+├── src/
+│   ├── App.jsx             # Main game logic
+│   ├── components/
+│   │   └── Square.jsx      # Game square component
+│   └── index.css           # Styles
+│
+├── public/
+│   └── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+🧠 Game Logic Highlights
+The game board is stored in a state array
+
+
+Turn alternates between 'X' and 'O'
+
+Checks for win conditions after every move
+
+Disables grid once game is over (win or draw)
+
+Resets all states on clicking "Restart Game"
+
+📌 Future Improvements
+🤖 Add single-player mode vs computer (AI)
+
+🌈 Add animations and sounds
+
+🔄 Save match history or scoreboard
+
+🌗 Dark mode support
+
+🙋‍♂️ Author
+Sai Pavan
+📎 GitHub Profile
+🌐 Live Demo
+
+```
