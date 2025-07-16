@@ -97,7 +97,6 @@ Resets all states on clicking "Restart Game"
 
 🙋‍♂️ Author
 Sai Pavan
-📎 GitHub Profile
-🌐 Live Demo
-
+📎 https://github.com/SaiPavan214
+🌐 https://to-do-list-saipavan214s-projects.vercel.app/
 ```
